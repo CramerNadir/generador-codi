@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generador de Codi</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+      input {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        width: 100px;
+        text-align: center;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Generador de Codi Final</h2>
+    <p>Introdueix un número de 4 xifres:</p>
+    <input id="num" maxlength="4" placeholder="" />
+    <br />
+    <button onclick="generarCodi()">Generar</button>
+    <p id="codi"></p>
+
+    <script>
+      function generarCodi() {
+        const input = document.getElementById("num").value;
+        if (!/^\d{4}$/.test(input)) {
+          alert("Introdueix un número de 4 xifres!");
+          return;
+        }
+        const base = parseInt(input) * 73;
+        const codi = base+2025;
+        document.getElementById("codi").innerText = "El teu codi és: " + codi;
+      }
+    </script>
+  </body>
+</html>
