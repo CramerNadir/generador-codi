@@ -62,8 +62,7 @@
           return;
         }
 
-        const base = parseInt(valor) * 73;
-        const codi = base.toString(16).toUpperCase() + "-2025";
+        const codi = parseInt(valor) * 73+2025;
         document.getElementById("codi").innerText = "El teu codi és: " + codi;
 
         // Desactivar input i botó
